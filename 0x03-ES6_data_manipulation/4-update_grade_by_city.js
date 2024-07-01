@@ -1,13 +1,13 @@
 export default function updateStudentGradeByCity(Students, city, newGrades) {
-  const defaultGrade = { grade: 'N/A'};
+  const defaultGrade = { grade: 'N/A' };
   return Students
-  .filter((Student) => Student.location === city)
-  .map((Student) => ({
+    .filter((Student) => Student.location === city)
+    .map((Student) => ({
       id: Student.id,
       firstName: Student.firstName,
       location: Student.location,
       grade: (newGrades
-         .filter((grade) => grade.studentId === Student.id)
-         .pop() || defaultGrade).grade
-   }));
+        .filter((grade) => grade.studentId === Student.id)
+        .pop() || defaultGrade).grade,
+    }));
 }
