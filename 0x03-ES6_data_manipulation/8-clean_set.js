@@ -1,8 +1,8 @@
 export default function cleanSet(set, startString) {
   if (startString === '') {
-    return;
+    return '';
   }
-  let result = [];
+  const result = [];
   for (let item of set) {
     if (item.startsWith(startString)) {
       item = item.slice(startString.length);
@@ -11,4 +11,3 @@ export default function cleanSet(set, startString) {
   }
   return result.join('-');
 }
-  
