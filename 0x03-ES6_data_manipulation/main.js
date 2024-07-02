@@ -1,8 +1,3 @@
-import updateUniqueItems from "./10-update_uniq_items.js";
-import groceriesList from "./9-groceries_list.js";
+import getListStudents from "./0-get_list_students.js";
 
-const map = groceriesList();
-console.log(map);
-
-updateUniqueItems(map)
-console.log(map);
+console.log(getListStudents());
