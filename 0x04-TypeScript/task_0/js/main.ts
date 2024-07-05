@@ -13,10 +13,10 @@ let student1: Student = {
 }
 
 let student2: Student = {
-  firstName: "Sohail",
+  firstName: "Melina",
   lastName: "charef",
   age: 19,
-  location: "Belgium"
+  location: "France"
 }
 
 let studentsList: Student[] = [student1, student2];
