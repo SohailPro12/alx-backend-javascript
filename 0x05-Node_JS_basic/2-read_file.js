@@ -5,12 +5,12 @@ const countStudents = (path) => {
     const data = fs.readFileSync(path, { encoding: 'utf8' });
     const lines = data.split('\n');
     let students = 0;
-    lines.forEach((line) => {
-      if (line) {
+    for (let i = 1; i < lines.length; i += 1) {
+      if (lines[i] !== '') {
         students += 1;
       }
-    });
-    console.log(`Number of students: ${students - 1}`);
+    }
+    console.log(`Number of students: ${students}`);
 
     // Extract the headers (first line)
     const headers = lines[0].trim().split(',');
