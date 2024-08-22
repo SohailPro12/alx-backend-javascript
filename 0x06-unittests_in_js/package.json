@@ -1,0 +1,15 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "- **Mocha** is a JavaScript test framework that runs on Node.js, making it easy to write and run tests. - **Test Suite:** Think of a test suite as a group of related tests. Mocha helps you organize them neatly. - **Example:**",
+  "main": "0-calcul.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.7.3"
+  }
+}
