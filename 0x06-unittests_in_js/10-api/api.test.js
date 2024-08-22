@@ -1,11 +1,11 @@
 const request = require('request');
-const { expect } = require('chai');
+const assert = require('assert');
 
 describe('Index page', () => {
   it('should return status code 200 and correct message', (done) => {
     request.get('http://localhost:7865', (error, response, body) => {
-      expect(response.statusCode).to.equal(200);
-      expect(body).to.equal('Welcome to the payment system');
+      assert.strictEqual(response.statusCode, 200);
+      assert.strictEqual(body, 'Welcome to the payment system');
       done();
     });
   });
@@ -14,15 +14,15 @@ describe('Index page', () => {
 describe('Cart page', () => {
   it('should return status code 200 and correct message for valid id', (done) => {
     request.get('http://localhost:7865/cart/12', (error, response, body) => {
-      expect(response.statusCode).to.equal(200);
-      expect(body).to.equal('Payment methods for cart 12');
+      assert.strictEqual(response.statusCode, 200);
+      assert.strictEqual(body, 'Payment methods for cart 12');
       done();
     });
   });
 
   it('should return status code 404 for invalid id', (done) => {
     request.get('http://localhost:7865/cart/hello', (error, response, body) => {
-      expect(response.statusCode).to.equal(404);
+      assert.strictEqual(response.statusCode, 404);
       done();
     });
   });
@@ -31,8 +31,8 @@ describe('Cart page', () => {
 describe('Available payments', () => {
   it('should return status code 200 and correct payment methods', (done) => {
     request.get('http://localhost:7865/available_payments', (error, response, body) => {
-      expect(response.statusCode).to.equal(200);
-      expect(body).to.deep.equal({
+      assert.strictEqual(response.statusCode, 200);
+      assert.deepStrictEqual(JSON.parse(body), {
         payment_methods: {
           credit_cards: true,
           paypal: false
@@ -52,8 +52,8 @@ describe('Login', () => {
         'Content-Type': 'application/json'
       }
     }, (error, response, body) => {
-      expect(response.statusCode).to.equal(200);
-      expect(body).to.equal('Welcome Betty');
+      assert.strictEqual(response.statusCode, 200);
+      assert.strictEqual(body, 'Welcome Betty');
       done();
     });
   });

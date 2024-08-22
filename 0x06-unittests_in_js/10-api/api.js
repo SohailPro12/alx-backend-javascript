@@ -21,7 +21,7 @@ app.get('/available_payments', (req, res) => {
 });
 // Route for the checkout page
 app.post('/login', (req, res) => {
-  res.send('Welcome to the payment system');
+  res.send('Welcome Betty');
 });
 
 // Start the server
